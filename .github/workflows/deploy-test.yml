@@ -4,8 +4,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
-    uses: nickej/action-test/.github/workflows/build.yml@main
+  build:  
+    uses: nickej/actions-test/.github/workflows/build.yml@main
 
   deploy:
     runs-on: ubuntu-latest
