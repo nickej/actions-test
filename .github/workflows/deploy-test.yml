@@ -7,7 +7,7 @@ jobs:
   build:  
     uses: nickej/actions-test/.github/workflows/build.yml@main
 
-  deploy:
+  deploy-to-test:
     runs-on: ubuntu-latest
     environment: test
     needs: build
