@@ -7,6 +7,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - uses: ./.github/workflows/build.yml
 
   deploy:
@@ -15,7 +16,5 @@ jobs:
     needs: build
     steps:
       - uses: actions/checkout@v4
-      - name: Tests
-        run: echo Running tests
-      - name: Build
-        run: echo Building
+      - name: Deploy to test
+        run: "echo Deploying to test, env value:${{vars.VARIABLE_NAME}}"
