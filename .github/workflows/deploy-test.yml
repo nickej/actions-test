@@ -5,7 +5,7 @@ on:
 
 jobs:
   build:
-    uses: ./.github/workflows/build.yml@main
+    uses: nickej/action-test/.github/workflows/build.yml@main
 
   deploy:
     runs-on: ubuntu-latest
