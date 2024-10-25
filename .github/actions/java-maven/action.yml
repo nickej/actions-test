@@ -1,0 +1,22 @@
+name: java-maven
+description: 'Setup java and maven'
+inputs:
+    java-version: 
+      description: 8, 11, 17 and 21 are valid values
+      required: true
+      default: '21'
+
+runs:
+  using: "composite"
+  steps:
+    - name: Setup Java
+      uses: actions/setup-java@v4
+      with:
+        distribution: "zulu"
+        java-version: ${{ inputs.java-version }}
+        overwrite-settings: false
+
+    - name: Setup Maven
+      uses: nickej/actions-test/.github/actions/setup-maven
+      with:
+        version: 3.9.9

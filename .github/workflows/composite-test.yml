@@ -1,0 +1,10 @@
+name: Composite maven java test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:  
+    uses: nickej/actions-test/.github/actions/java-maven-build-composite@main
+    with:
+      java-version: 21

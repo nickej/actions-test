@@ -1,0 +1,28 @@
+name: java-maven-composite
+description: 'Downloads maven'
+inputs:
+    java-version: 
+      description: 8, 11, 17 and 21 are valid values
+      required: true
+      default: '21'
+
+runs:
+  using: "composite"
+  steps:
+    - uses: nickej/actions-test/.github/actions/java-maven
+      with:
+        java-version: ${{ inputs.java-version }}
+
+    - name: Verify
+      run: mvn verify
+      shell: bash
+
+    #Vill en verkligen alltid göra detta? För libs ja antagligen men för applikationer som ändå skall bakas in i dockerimage?
+    # - name: Deploy
+    #   run: mvn deploy
+    #   shell: bash
+
+    # - uses: ziklo/scanning-tools
+    # - name: Dependency check
+    #   run: dependency-check.sh --failOnCVSS 8
+    #   shell: bash
