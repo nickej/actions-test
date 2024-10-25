@@ -9,7 +9,7 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - uses: nickej/actions-test/.github/actions/java-maven
+    - uses: nickej/actions-test/.github/actions/java-maven@main
       with:
         java-version: ${{ inputs.java-version }}
 
