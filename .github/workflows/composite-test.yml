@@ -4,7 +4,10 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:  
-    uses: nickej/actions-test/.github/actions/java-maven-build-composite@main
-    with:
-      java-version: 21
+  build:
+    runs-on: ubuntu-latest
+    name: Testing use of composite action
+    steps:
+    - uses: nickej/actions-test/.github/actions/java-maven-build-composite@main
+      with:
+        java-version: 21
